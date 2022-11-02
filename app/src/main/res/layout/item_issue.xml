@@ -63,8 +63,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="8dp"
-                    android:text="Closed"
-                    android:textColor="@color/white"
+                    android:text="@string/closed"
+                    android:textColor="@color/white"/>
             </LinearLayout>
 
             <TextView
@@ -98,11 +98,12 @@
                     android:src="@drawable/ic_circle_open" />
 
                 <TextView
+                    android:id="@+id/opened_date_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="8dp"
-                    android:text="Opened"
+                    android:text="@string/opened"
                     android:textColor="@color/white" />
             </LinearLayout>
 
