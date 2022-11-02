@@ -22,6 +22,4 @@ data class Reactions(
     val url: String,
     @SerializedName("+1")
     val x1: Int,
-    @SerializedName("-1")
-    val x1_minus: Int
 )

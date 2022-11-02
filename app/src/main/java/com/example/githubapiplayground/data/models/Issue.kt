@@ -3,7 +3,7 @@ package com.example.githubapiplayground.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Issues(
+data class Issue(
     @SerializedName("active_lock_reason")
     val activeLockReason: Any,
     @SerializedName("assignee")
@@ -22,6 +22,8 @@ data class Issues(
     val commentsUrl: String,
     @SerializedName("created_at")
     val createdAt: String,
+    @SerializedName("draft")
+    val draft: Boolean,
     @SerializedName("events_url")
     val eventsUrl: String,
     @SerializedName("html_url")
@@ -42,12 +44,12 @@ data class Issues(
     val number: Int,
     @SerializedName("performed_via_github_app")
     val performedViaGithubApp: Any,
+    @SerializedName("pull_request")
+    val pullRequest: PullRequest,
     @SerializedName("reactions")
     val reactions: Reactions,
     @SerializedName("repository_url")
     val repositoryUrl: String,
-    @SerializedName("score")
-    val score: Double,
     @SerializedName("state")
     val state: String,
     @SerializedName("state_reason")
