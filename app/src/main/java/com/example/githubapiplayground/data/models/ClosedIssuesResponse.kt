@@ -7,7 +7,7 @@ data class ClosedIssuesResponse(
     @SerializedName("incomplete_results")
     val incompleteResults: Boolean,
     @SerializedName("items")
-    val items: List<Item>,
+    val issues: List<Issues>,
     @SerializedName("total_count")
     val totalCount: Int
 )

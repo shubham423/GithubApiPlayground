@@ -3,7 +3,7 @@ package com.example.githubapiplayground.data.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Item(
+data class Issues(
     @SerializedName("active_lock_reason")
     val activeLockReason: Any,
     @SerializedName("assignee")
