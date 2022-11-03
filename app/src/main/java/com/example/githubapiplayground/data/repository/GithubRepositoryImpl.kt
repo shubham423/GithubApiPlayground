@@ -7,8 +7,7 @@ import retrofit2.Response
 import java.util.*
 import javax.inject.Inject
 
-class GithubRepositoryImpl @Inject constructor(val api: GithubApi) : GithubRepository {
-
+class GithubRepositoryImpl @Inject constructor(private val api: GithubApi) : GithubRepository {
 
     override suspend fun getClosedIssues(
         owner: String,

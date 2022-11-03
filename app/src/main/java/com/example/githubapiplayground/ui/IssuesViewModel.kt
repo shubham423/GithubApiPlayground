@@ -21,6 +21,7 @@ class IssuesViewModel @Inject constructor(
     val issues: LiveData<Resource<List<Issue>>> = _issues
 
     fun getClosedIssues(owner:String,repo:String,state: RepoState) {
+        _issues.value=Resource.Loading()
         viewModelScope.launch {
             try {
                 val result = repository.getClosedIssues(owner,repo,state)
