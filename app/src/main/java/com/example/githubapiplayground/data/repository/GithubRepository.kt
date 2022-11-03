@@ -5,5 +5,5 @@ import com.example.githubapiplayground.utils.RepoState
 import retrofit2.Response
 
 interface GithubRepository {
-    suspend fun getClosedIssues(owner:String,repo:String,state: RepoState):Response<ClosedIssuesResponse>
+    suspend fun getClosedIssues(owner:String,repo:String,state: RepoState): Response<ClosedIssuesResponse>
 }

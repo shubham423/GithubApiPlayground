@@ -12,6 +12,7 @@ import com.example.githubapiplayground.databinding.FragmentIssuesBinding
 import com.example.githubapiplayground.ui.adapter.IssuesAdapter
 import com.example.githubapiplayground.utils.RepoState
 import com.example.githubapiplayground.utils.Resource
+import com.example.githubapiplayground.utils.snack
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -41,7 +42,7 @@ class IssuesFragment : Fragment() {
                     val repo= query?.split("/")?.get(1).toString()
                     viewModel.getClosedIssues(owner,repo, RepoState.CLOSED)
                 }catch (e:Exception){
-                    Toast.makeText(requireContext(), "invalid repo", Toast.LENGTH_SHORT).show()
+                   requireView().snack("Invalid repo")
                 }
 
                 return false
@@ -65,6 +66,7 @@ class IssuesFragment : Fragment() {
 
                 }
                 is Resource.Error -> {
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     binding.noDataTv.visibility=View.VISIBLE
                     binding.progressBar.visibility = View.GONE
                 }

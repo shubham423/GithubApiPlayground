@@ -1,5 +1,7 @@
 package com.example.githubapiplayground.utils
 
+import android.view.View
+import com.google.android.material.snackbar.Snackbar
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -12,4 +14,8 @@ fun String.convertIntoDate(): String {
     val formatter: DateFormat =
         SimpleDateFormat("yyyy-MM-dd") //If you need time just put specific format for time like 'HH:mm:ss'
     return formatter.format(date)
+}
+
+fun View.snack(message: String, duration: Int = Snackbar.LENGTH_LONG) {
+    Snackbar.make(this, message, duration).show()
 }

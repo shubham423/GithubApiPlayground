@@ -21,23 +21,19 @@ class IssuesViewModel @Inject constructor(
     private val _issues: MutableLiveData<Resource<List<Issue>>> = MutableLiveData()
     val issues: LiveData<Resource<List<Issue>>> = _issues
 
-    fun getClosedIssues(owner:String,repo:String,state: RepoState) {
-        _issues.value=Resource.Loading()
+    fun getClosedIssues(owner: String, repo: String, state: RepoState) {
+        _issues.value = Resource.Loading()
         viewModelScope.launch {
             try {
-                val result = repository.getClosedIssues(owner,repo,state)
+                val result = repository.getClosedIssues(owner, repo, state)
                 Timber.d("result ${result.body()}")
-                if (result.isSuccessful) {
-                    _issues.value = result.body()?.let { Resource.Success(data = it) }
-                } else {
-
-                }
+                _issues.value = result.body()?.let { Resource.Success(data = it) }
             } catch (e: Exception) {
                 _issues.value = Resource.Error(message = e.message.toString())
                 Timber.d("result exception ${e.message}")
             }
 
-
         }
     }
+
 }
