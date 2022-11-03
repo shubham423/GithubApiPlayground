@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.githubapiplayground.databinding.FragmentIssuesBinding
 import com.example.githubapiplayground.ui.adapter.IssuesAdapter
@@ -33,9 +34,15 @@ class IssuesFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                val owner= query?.split("/")?.get(0).toString()
-                val repo= query?.split("/")?.get(1).toString()
-                viewModel.getClosedIssues(owner,repo,RepoState.CLOSED)
+
+                try {
+                    val owner= query?.split("/")?.get(0).toString()
+                    val repo= query?.split("/")?.get(1).toString()
+                    viewModel.getClosedIssues(owner,repo,RepoState.CLOSED)
+                }catch (e:Exception){
+                    Toast.makeText(requireContext(), "invalid repo", Toast.LENGTH_SHORT).show()
+                }
+
                 return false
             }
 
