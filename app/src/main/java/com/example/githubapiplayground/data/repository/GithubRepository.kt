@@ -1,7 +1,7 @@
 package com.example.githubapiplayground.data.repository
 
 import com.example.githubapiplayground.data.models.ClosedIssuesResponse
-import com.example.githubapiplayground.ui.RepoState
+import com.example.githubapiplayground.utils.RepoState
 import retrofit2.Response
 
 interface GithubRepository {

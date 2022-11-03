@@ -2,7 +2,7 @@ package com.example.githubapiplayground.data.repository
 
 import com.example.githubapiplayground.data.models.ClosedIssuesResponse
 import com.example.githubapiplayground.data.network.GithubApi
-import com.example.githubapiplayground.ui.RepoState
+import com.example.githubapiplayground.utils.RepoState
 import retrofit2.Response
 import java.util.*
 import javax.inject.Inject

@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingHorizontal="12dp"
         android:paddingVertical="8dp">
 
         <LinearLayout
@@ -130,9 +131,11 @@
             android:id="@+id/user_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginEnd="16dp"
+            app:civ_border_color="@color/primaryColor"
+            app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
-            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/linearLayout2"
             app:layout_constraintVertical_bias="0.0" />
 

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubapiplayground.data.models.Issue
 import com.example.githubapiplayground.databinding.ItemIssueBinding
+import com.example.githubapiplayground.utils.convertIntoDate
 
 class IssuesAdapter(val data: List<Issue>) : RecyclerView.Adapter<IssuesAdapter.ViewHolder>() {
 
@@ -13,8 +14,8 @@ class IssuesAdapter(val data: List<Issue>) : RecyclerView.Adapter<IssuesAdapter.
         RecyclerView.ViewHolder(binding.root) {
         fun bind(issue: Issue) {
             binding.titleTv.text = issue.title
-            binding.closedDateTv.text = issue.closedAt
-            binding.openedDateTv.text = issue.createdAt
+            binding.closedDateTv.text = issue.closedAt.convertIntoDate()
+            binding.openedDateTv.text = issue.createdAt.convertIntoDate()
             Glide.with(binding.root).load(issue.user.avatarUrl).into(binding.userImg)
             binding.usernameTv.text=issue.user.login
         }

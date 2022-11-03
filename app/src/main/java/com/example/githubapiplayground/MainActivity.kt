@@ -2,10 +2,7 @@ package com.example.githubapiplayground
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import com.example.githubapiplayground.databinding.ActivityMainBinding
-import com.example.githubapiplayground.ui.IssuesViewModel
-import com.example.githubapiplayground.ui.RepoState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

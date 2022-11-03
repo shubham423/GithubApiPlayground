@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubapiplayground.data.models.Issue
 import com.example.githubapiplayground.data.repository.GithubRepository
+import com.example.githubapiplayground.utils.RepoState
 import com.example.githubapiplayground.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

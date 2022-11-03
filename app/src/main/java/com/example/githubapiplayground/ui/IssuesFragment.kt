@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.githubapiplayground.databinding.FragmentIssuesBinding
 import com.example.githubapiplayground.ui.adapter.IssuesAdapter
+import com.example.githubapiplayground.utils.RepoState
 import com.example.githubapiplayground.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -38,7 +39,7 @@ class IssuesFragment : Fragment() {
                 try {
                     val owner= query?.split("/")?.get(0).toString()
                     val repo= query?.split("/")?.get(1).toString()
-                    viewModel.getClosedIssues(owner,repo,RepoState.CLOSED)
+                    viewModel.getClosedIssues(owner,repo, RepoState.CLOSED)
                 }catch (e:Exception){
                     Toast.makeText(requireContext(), "invalid repo", Toast.LENGTH_SHORT).show()
                 }
